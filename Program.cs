@@ -10,14 +10,11 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowFrontend", policy =>
-        policy.WithOrigins(
-                "http://localhost:8080", // Vite dev server
-                "https://your-frontend-domain.com" // add your deployed frontend URL here
-            )
-            .AllowAnyHeader()
-            .AllowAnyMethod()
-            .AllowCredentials());
+    options.AddPolicy("AllowFrontend", policy => {
+        policy.AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+    });
 });
 
 var app = builder.Build();
