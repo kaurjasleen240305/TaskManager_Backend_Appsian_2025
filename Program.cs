@@ -8,6 +8,18 @@ builder.Services.AddSingleton<TaskService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+        policy.WithOrigins(
+                "http://localhost:8080", // Vite dev server
+                "https://your-frontend-domain.com" // add your deployed frontend URL here
+            )
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials());
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
@@ -16,7 +28,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Register the endpoints
+app.UseCors("AllowFrontend");
+
 app.MapTaskEndpoints();
+
+app.Urls.Add("http://0.0.0.0:" + Environment.GetEnvironmentVariable("PORT"));
 
 app.Run();
