@@ -1,5 +1,5 @@
 # Use .NET 9.0 SDK for build and runtime
-FROM mcr.microsoft.com/dotnet/sdk:9.0.109
+FROM mcr.microsoft.com/dotnet/sdk
 
 # Set working directory
 WORKDIR /app
