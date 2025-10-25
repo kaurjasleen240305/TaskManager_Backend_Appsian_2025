@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Expose application port
-EXPOSE 8080
+EXPOSE 10000
 
 # Command: build the project every time container starts, then run it
-CMD dotnet build TaskManager.csproj -c Release && dotnet run --project TaskManager.csproj --urls "http://0.0.0.0:8080"
+CMD dotnet build TaskManager.csproj -c Release && dotnet run --project TaskManager.csproj --urls "http://0.0.0.0:10000"
