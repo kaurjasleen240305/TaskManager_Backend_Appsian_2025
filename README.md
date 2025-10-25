@@ -47,6 +47,14 @@ Designed using Tailwind,Bootstrap and custom css.
 
 ---
 
+### 📸 Screenshots
+
+![All tasks tab](./assets/all.png)
+![Active tasks tab](./assets/active.png)
+![Completed tasks tab](./assets/completed.png)
+
+---
+
 ### ⚙️ Setup Instructions
 
 ```bash
@@ -59,3 +67,5 @@ dotnet restore
 
 # 3️⃣ Run the application
 dotnet run
+
+
