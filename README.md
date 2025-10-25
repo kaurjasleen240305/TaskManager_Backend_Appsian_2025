@@ -37,11 +37,13 @@ Ensure the following are installed:
 
 ---
 
-### 🌐 Deployment Link (On Render)
-
-Explore the live API via Swagger:  
+## **Bonus Section - **
 
 👉 **[Appsian Task Manager Backend](https://taskmanager-backend-appsian-2025-1.onrender.com/swagger/index.html)**
+
+Implemented task filtering based on their status completed/pending/all.
+
+Designed using Tailwind,Bootstrap and custom css.
 
 ---
 
